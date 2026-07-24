@@ -666,7 +666,7 @@ class HashAnalyzer:
         history = []
         for i, b in enumerate(bytes_list):
             history.append({
-                'result': 'Tài' if ((b >> 4) + (b & 0xF)) >= 15 else 'Xỉu'
+                'result': 'Tài' if b >= 128 else 'Xỉu',
                 'total': b,
                 'sid': i,
                 'd1': (b >> 4) & 0xF,
